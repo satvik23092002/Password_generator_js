@@ -1,0 +1,187 @@
+/* Theme variables */
+:root {
+  --bg: #fff;
+  --container-bg: #fff;
+  --text: #333;
+  --primary: #6c47c7;
+  --primary-dark: #4f3ca7;
+  --input-bg: #f9f9f9;
+  --border: #ddd;
+  --strength-bg: #eee;
+}
+body {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
+}
+
+.container {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  padding: 2rem;
+  max-width: 400px;
+  width: 100%;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  color: #333;
+  transition: background 0.3s, color 0.3s;
+}
+
+h1 {
+  text-align: center;
+  color: #4f3ca7;
+  margin-bottom: 0.5rem;
+}
+
+.generator-settings {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+label {
+  font-size: 1rem;
+  color: #333;
+}
+
+input[type="range"] {
+  width: 100%;
+}
+
+.checkboxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+}
+
+button {
+  background: #6c47c7;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #4f3ca7;
+}
+
+.output-section {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+#password {
+  flex: 1;
+  padding: 0.5rem;
+  font-size: 1.1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #f9f9f9;
+  color: #333;
+  transition: background 0.3s, color 0.3s, border 0.3s;
+}
+
+.strength {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+#strength-bar {
+  height: 10px;
+  border-radius: 5px;
+  background: #eee;
+  margin-top: 0.2rem;
+  transition: background 0.3s, width 0.3s;
+  width: 100%;
+}
+
+.theme-toggle {
+  display: flex;
+  justify-content: flex-end;
+}
+#theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #4f3ca7;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s;
+}
+#theme-toggle:focus {
+  outline: 2px solid #6c47c7;
+}
+
+body.dark {
+  --bg: linear-gradient(135deg, #232336 0%, #181825 100%);
+  --container-bg: #23243a;
+  --text: #f3f3fa;
+  --primary: #a991e4;
+  --primary-dark: #6c47c7;
+  --input-bg: #232336;
+  --border: #39395a;
+  --strength-bg: #39395a;
+}
+body.dark {
+  background: var(--bg);
+}
+body.dark .container {
+  background: var(--container-bg);
+  color: var(--text);
+  box-shadow: 0 6px 32px rgba(0,0,0,0.45), 0 1.5px 6px rgba(169,145,228,0.08);
+  border: 1.5px solid rgba(169,145,228,0.13);
+}
+body.dark h1 {
+  color: var(--primary-dark);
+}
+body.dark label {
+  color: var(--text);
+}
+body.dark button {
+  background: var(--primary);
+}
+body.dark button:hover {
+  background: var(--primary-dark);
+}
+body.dark #password {
+  background: var(--input-bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+body.dark #strength-bar {
+  background: var(--strength-bg);
+}
+body.dark #theme-toggle {
+  color: var(--primary-dark);
+}
+body.dark #theme-toggle:focus {
+  outline: 2px solid var(--primary);
+}
+
+@media (max-width: 500px) {
+  .container {
+    padding: 1rem;
+    max-width: 98vw;
+  }
+  h1 {
+    font-size: 1.3rem;
+  }
+  button {
+    font-size: 0.95rem;
+    padding: 0.6rem 1rem;
+  }
+}
